@@ -12,4 +12,4 @@ In our relational database there's two tables, one-to-one relationship exists wh
 
 Best practice to store price in database
 ---
-For price column The best type in my my opinion should be DECIMAL. to avoid rounding errors
+For price column The best type in my my opinion should be DECIMAL(10,2). to avoid rounding errors
