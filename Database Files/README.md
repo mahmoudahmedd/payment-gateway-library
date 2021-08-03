@@ -5,7 +5,7 @@ In our relational database there's two tables, one-to-one relationship exists wh
 ## Built With
 * [MySQL](https://www.mysql.com/)
 
-##EER Diagram
+## EER Diagram
 <p align="center">
   <img src="EER Diagram.png"/>
 </p>
