@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment</title>
+  <meta charset="utf-8"/>
+  <!-- Optimal rendering on mobile devices. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Optimal Internet Explorer compatibility -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <!-- Sample CSS styles for demo purposes. You can override these styles to match your web page's branding. -->
+  <link rel="stylesheet" type="text/css" href="https://www.paypalobjects.com/webstatic/en_US/developer/docs/css/cardfields.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JavaScript SDK -->
+  <script src="https://www.paypal.com/sdk/js?components=buttons,hosted-fields&client-id=Ac5EsbEwf8ekC70vThh3bUG5271vBomALtNIWTgv5zLJbEKRizMUm6bkYHYkU7JI6faI0K0uZSO7lnGV" data-client-token="eyJicmFpbnRyZWUiOnsiYXV0aG9yaXphdGlvbkZpbmdlcnByaW50IjoiNmNiNDQ5NTkxMmFjY2U0NzFhZDAyZGFjNDk2YWE3NTc3YTUzZDY2MjYyYzgxYTRiNzA5NmZlNWQ1NzgxNTY2M3xtZXJjaGFudF9pZD1yd3dua3FnMnhnNTZobTJuJnB1YmxpY19rZXk9NjNrdm4zN3Z0MjlxYjRkZiZjcmVhdGVkX2F0PTIwMjEtMDgtMDNUMDA6NDc6MTkuMDczWiIsInZlcnNpb24iOiIzLXBheXBhbCJ9LCJwYXlwYWwiOnsiaWRUb2tlbiI6ImV5SnJhV1FpT2lJNE5URmhNakF6WWpRNU5ESTBaR0l5T0RaaFpEVXhZalkzWVdaak9HSTNNeUlzSW5SNWNDSTZJa3BYVkNJc0ltRnNaeUk2SWxKVE1qVTJJbjAuZXlKcGMzTWlPaUpvZEhSd2N6b3ZMMkZ3YVM1ellXNWtZbTk0TG5CaGVYQmhiQzVqYjIwaUxDSmhZM0lpT2xzaVkyeHBaVzUwSWwwc0ltRjFaQ0k2SWtGak5VVnpZa1YzWmpobGEwTTNNSFpVYUdnellsVkhOVEkzTVhaQ2IyMUJUSFJPU1ZkVVozWTFla3hLWWtWTFVtbDZUVlZ0Tm1KcldVaFphMVUzU2trMlptRkpNRXN3ZFZwVFR6ZHNia2RXSWl3aWNtOXNaU0k2SWsxRlVrTklRVTVVSWl3aVlYVjBhRjkwYVcxbElqb3hOakkzT1RVeE5qTTVMQ0poZWlJNkltZGpjQzV6YkdNaUxDSnpZMjl3WlhNaU9sc2lRbkpoYVc1MGNtVmxPbFpoZFd4MElsMHNJbVY0Y0NJNk1UWXlOemsxTWpVek9Td2ljMlZ6YzJsdmJsOXBibVJsZUNJNkluUkdOVVp6UXpWWlJsQm1lalJHZDBoTVVFSXhibFpFUTB4alpTSXNJbWxoZENJNk1UWXlOemsxTVRZek9Td2lhblJwSWpvaVZUSkJRVXhYUjNGTFJIRkJaVXMwU1ZkbFgycERjRTFaV0RKa1FuTnlSMGhFWW5SeE9XbFRNekJoYWpCek5HOU5WRzFQZFVkNmEwRnpOR3RoWlhsak9VcDFkWFJFUm05SE5XbFRiVlZtVUVOVlN6ZFVOWGRKWDJrMWMzVkJWbVozYlMwd00xZFNOWFZXVkZnelpqSmZPVUZvV0ZaNFNYaGxjVlIwZVZNMFVuY2lMQ0pqYkdsbGJuUmZhV1FpT2lKQll6VkZjMkpGZDJZNFpXdEROekIyVkdob00ySlZSelV5TnpGMlFtOXRRVXgwVGtsWFZHZDJOWHBNU21KRlMxSnBlazFWYlRaaWExbElXV3RWTjBwSk5tWmhTVEJMTUhWYVUwODNiRzVIVmlKOS5IN3h6aWlBR1pDQnQ2LUxuaTNBUkN2T2xOUmtUNTdpUmZ5Rnl6TUxhd3RpMGl5UkcxSDlVeTU2Vjgyd01NX2d3M0ZneFFaUV9DeTFDQTlFVVhoN3YtejloY2JBc0hEc2FXenFhZU1zalVsdmlhclpzLWF0TnBxek10eUg3dHNuYUJOU1Bmb2JkSzZnOW1PMVFsUDBQMzFYUFZDRlJGb3R3dmNJYk1vb0dGZDMwNEtVRTF1YUxjVzUtT0o0ZG1pOFRpalZIYjhSU01HeFJldEoyQm9vNnUwWkpIendlVFJwdC1qV1BqeDBwc2U3LTBMWmZFMnlwcmt0MFRjbGZnYndJZjZybDB4cVVDTENZVnljVF9fbVlKRlktelh0cDE3cUFlbUJ0Y29QLTJsSjA3MkozZDlEQ2NJaWRWdnM3M1E5UC1leVBNOVZCVHF4Q05lODV3VVhsRlEiLCJhY2Nlc3NUb2tlbiI6IkEyMUFBSlc0SVgzc2RxU29uajR4dVhidEhhR0lmOVE5TUlTMkRHV3lLMWg0X3kzOWc2VEFfelRuMlJyc3R1OFJVa3NRV0hKQWZ0eU11ZjhOTVBYV0E2d1laUDFINWFQZ2cifX0="></script>
+</head>
+<body>
+  <main class="page payment-page">
+    <section class="payment-form dark">
+      <div class="container">
+        <form id="card-form">
+          <div class="card-details">
+            <h3 class="title">Order Section</h3>
+            <div class="row">
+              <div class="form-group col-sm-7">
+                <label for="price">Price</label>
+                <input id="price" type="number" class="form-control" placeholder="Price" aria-label="Price" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-group col-sm-5">
+                <label for="currency_code">Currency Code</label>
+                <select name="cars" class="form-control" id="currency_code">
+                  <option value="USD">USD</option>
+                </select>
+              </div>
+              <div class="form-group col-sm-12">
+                <label for="card-holder-name">Name on Card</label>
+                <input type="text" class="form-control" id="card-holder-name" name="card-holder-name" autocomplete="off" placeholder="card holder name"/> 
+              </div>
+            </div>
+          </div>
+
+          <div class="card-details">
+            <h3 class="title">Payment Section</h3>
+            <div class="row">
+
+              <div class="form-group col-sm-12">
+                <label for="card-number">Card Number</label>
+                <div id="card-number" class="form-control card_field"></div>
+              </div>
+
+              <div class="form-group col-sm-8">
+                <label for="cvc">CVC</label>
+                <div id="cvv" class="form-control card_field"></div>
+              </div>
+              
+              <div class="form-group col-sm-4">
+                <label for="expiration-date">Expiration Date</label>
+                <div id="expiration-date" class="form-control card_field"></div>
+              </div>
+
+              <div class="form-group col-sm-12">
+                <button value="submit" id="submit" class="btn btn-primary btn-block">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- Implementation -->
+<script>
+   let orderId;
+   let token;
+   
+   // If this returns false or the card fields aren't visible, see Step #1.
+   if (paypal.HostedFields.isEligible()) {
+
+     // Renders card fields
+     paypal.HostedFields.render({
+       // Call your server to set up the transaction
+       createOrder: function () {
+        let cardHolderName = document.getElementById('card-holder-name').value;
+        let currencyCode = document.getElementById('currency_code').value;
+        let price = document.getElementById('price').value;  
+         return fetch('/orders', {
+          method: 'post',
+          body: JSON.stringify({
+            currency_code: currencyCode, 
+            price:price, 
+            customer_name:cardHolderName,
+            payment_type: "PAYPAL"
+            }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+
+        }).then(function(res) {
+            return res.json();
+        }).then(function(orderData) {
+          token = orderData.order_data.token;
+          orderId = orderData.order_data.id;
+          return token;
+        });
+       },
+
+       styles: {
+         '.valid': {
+          'color': 'green'
+         },
+         '.invalid': {
+          'color': 'red'
+         }
+       },
+
+       fields: {
+         number: {
+           selector: "#card-number",
+           placeholder: "4111 1111 1111 1111"
+         },
+         cvv: {
+           selector: "#cvv",
+           placeholder: "123"
+         },
+         expirationDate: {
+           selector: "#expiration-date",
+           placeholder: "MM/YY"
+         }
+       }
+     }).then(function (cardFields) {
+       document.querySelector("#card-form").addEventListener('submit', (event) => {
+         event.preventDefault();
+
+         cardFields.submit({
+           // Cardholder's first and last name
+           cardholderName: document.getElementById('card-holder-name').value,
+           // Billing Address
+           
+         }).then(function () {
+           fetch('/orders/capture/' + orderId, {
+             method: 'put',
+            body:JSON.stringify({data:{token: token}, payment_type: "PAYPAL"}),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8'
+            }
+
+           }).then(function(res) {
+              return res.json();
+           }).then(function (orderData) {
+              if(orderData.hasOwnProperty('errors'))
+              {
+                // Show a failure message
+                return alert(orderData.errors[0].msg); 
+              }
+
+              // Show a success message or redirect
+              alert('Transaction completed!');
+           })
+        }).catch(function (err) {
+          alert('Payment could not be created!')
+        });
+       });
+     });
+   } else {
+     // Hides card fields if the merchant isn't eligible
+     document.querySelector("#card-form").style = 'display: none';
+   }
+ </script>
+</body>
+</html>
