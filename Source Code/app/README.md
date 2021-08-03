@@ -15,6 +15,11 @@ cd lib
 npm install
 ```
 
+## Screenshot
+<p align="center">
+  <img src="app.png"/>
+</p>
+
 ## Set your Configuration
 
 In configuration/config.js 
@@ -40,9 +45,9 @@ curl -X POST https://api-m.sandbox.paypal.com/v1/identity/generate-token \
 ```
 
 ## Data Example for credit card
-number: 4296715877997914
-expiration date: 02/22
-cvv: 111
+number: <b>4296715877997914</b>
+expiration date: <b>02/22</b>
+cvv: <b>111</b>
 
 ## Testing
 ```
