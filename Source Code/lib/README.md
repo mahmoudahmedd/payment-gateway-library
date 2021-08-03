@@ -24,7 +24,7 @@ var data =
   currency_code :"USD"
 };
 
-paypal.createOrder(order, (err, gatewayResponse) =>
+paypal.createOrder(data, (err, gatewayResponse) =>
 {
     console.log(gatewayResponse);
 });
