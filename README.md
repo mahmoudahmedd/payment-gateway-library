@@ -1,4 +1,4 @@
-# payment-gateway-library
+# Payment Gateway Library
 A Payment gateway library, that can handle payments easily for Node JS.
 
 
