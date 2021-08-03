@@ -24,7 +24,7 @@ var data =
   currency_code :"USD"
 };
 
-paypal.createOrder(data, (err, gatewayResponse) =>
+gatewayFactory.createOrder(data, (err, gatewayResponse) =>
 {
     console.log(gatewayResponse);
 });
@@ -37,7 +37,7 @@ var data =
 };
 
 
-paypal.captureOrder(data, (err, gatewayResponse) =>
+gatewayFactory.captureOrder(data, (err, gatewayResponse) =>
 {
     console.log(gatewayResponse);
 });
